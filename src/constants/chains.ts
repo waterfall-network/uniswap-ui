@@ -142,10 +142,11 @@ export const CHAIN_INFO: ChainInfo = {
   },
   [SupportedChainId.WATERFALL]: {
     docs: 'https://waterfall.network/',
-    explorer: 'https://explorer.waterfall.network/block',
+    explorer: 'https://explorer.waterfall.network',
     infoLink: 'https://waterfall.network/',
     label: 'Waterfall',
     logoUrl: ethereumLogoUrl,
+    rpcUrls: ['https://rpc.waterfall.network/rpc'],
     nativeCurrency: { name: 'Waterfall', symbol: 'WAT', decimals: 18 },
   },
   [SupportedChainId.OPTIMISM]: {
