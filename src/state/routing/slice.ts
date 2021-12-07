@@ -7,7 +7,7 @@ import { GetQuoteResult } from './types'
 export const routingApi = createApi({
   reducerPath: 'routingApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://api.uniswap.org/v1/',
+    baseUrl: 'https://api.waterfall.network/v1/',
   }),
   endpoints: (build) => ({
     getQuote: build.query<

@@ -8,7 +8,7 @@ type AddressMap = { [chainId: number]: string }
 
 export const UNI_ADDRESS: AddressMap = constructSameAddressMap('0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984')
 export const MULTICALL_ADDRESS: AddressMap = {
-  ...constructSameAddressMap('0x1F98415757620B543A52E61c46B32eB19261F984', [
+  ...constructSameAddressMap('0xF5d45e188A0a6d677e167a21B617C042aE15a39e', [
     SupportedChainId.OPTIMISTIC_KOVAN,
     SupportedChainId.OPTIMISM,
   ]),
@@ -16,7 +16,7 @@ export const MULTICALL_ADDRESS: AddressMap = {
   [SupportedChainId.ARBITRUM_RINKEBY]: '0xa501c031958F579dB7676fF1CE78AD305794d579',
 }
 export const V2_FACTORY_ADDRESSES: AddressMap = constructSameAddressMap('0x5F8d320D7a13e9E543e6649787054b131B7dCD78')
-export const V2_ROUTER_ADDRESS: AddressMap = constructSameAddressMap('0x53B6310eeC2d170b425B4a05C05201C572A868e4')
+export const V2_ROUTER_ADDRESS: AddressMap = constructSameAddressMap('0x6483e31f916068D7812cbe0ffcaDC2189D178591')
 
 /**
  * The oldest V0 governance address
@@ -75,7 +75,7 @@ export const ENS_REGISTRAR_ADDRESSES: AddressMap = {
 export const SOCKS_CONTROLLER_ADDRESSES: AddressMap = {
   [SupportedChainId.MAINNET]: '0x65770b5283117639760beA3F867b69b3697a91dd',
 }
-export const SWAP_ROUTER_ADDRESSES: AddressMap = constructSameAddressMap('0xE592427A0AEce92De3Edee1F18E0157C05861564', [
+export const SWAP_ROUTER_ADDRESSES: AddressMap = constructSameAddressMap('0x6483e31f916068D7812cbe0ffcaDC2189D178591', [
   SupportedChainId.OPTIMISM,
   SupportedChainId.OPTIMISTIC_KOVAN,
   SupportedChainId.ARBITRUM_ONE,
