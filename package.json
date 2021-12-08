@@ -145,7 +145,7 @@
     "prei18n:extract": "touch src/locales/en-US.po",
     "i18n:extract": "lingui extract --locale en-US",
     "i18n:compile": "yarn i18n:extract && lingui compile",
-    "postinstall": "yarn contracts:compile && yarn graphql:generate && yarn i18n:compile",
+    "postinstall": "patch-package && yarn contracts:compile && yarn graphql:generate && yarn i18n:compile",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=./custom-test-env.js",
@@ -166,5 +166,8 @@
     ]
   },
   "license": "GPL-3.0-or-later",
-  "dependencies": {}
+  "dependencies": {
+    "patch-package": "^6.4.7",
+    "postinstall-postinstall": "^2.1.0"
+  }
 }
