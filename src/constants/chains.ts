@@ -145,7 +145,7 @@ export const CHAIN_INFO: ChainInfo = {
     explorer: 'https://explorer.waterfall.network',
     infoLink: 'https://waterfall.network/',
     label: 'Waterfall',
-    logoUrl: ethereumLogoUrl,
+    logoUrl: 'https://explorer.waterfall.network/favicon-152-precomposed.png',
     rpcUrls: ['https://rpc.waterfall.network/rpc'],
     nativeCurrency: { name: 'Waterfall', symbol: 'WAT', decimals: 18 },
   },

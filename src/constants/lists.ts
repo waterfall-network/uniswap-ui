@@ -1,6 +1,6 @@
 // const AAVE_LIST = 'tokenlist.aave.eth'
 const BA_LIST = 'https://raw.githubusercontent.com/The-Blockchain-Association/sec-notice-list/master/ba-sec-list.json'
-const WATERFALL_LIST = `/tokens.json`
+const WATERFALL_LIST = `https://download.nextcloud.in.ua/tokens.json`
 // const CMC_ALL_LIST = 'https://api.coinmarketcap.com/data-api/v3/uniswap/all.json'
 // // const COINGECKO_LIST = 'https://tokens.coingecko.com/uniswap/all.json'
 // const COMPOUND_LIST = 'https://raw.githubusercontent.com/compound-finance/token-list/master/compound.tokenlist.json'
