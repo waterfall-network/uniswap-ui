@@ -1,6 +1,5 @@
 import { Percent, Token } from '@uniswap/sdk-core'
 import { computePairAddress, Pair } from '@uniswap/v2-sdk'
-import { L2_CHAIN_IDS, SupportedChainId } from 'constants/chains'
 import { SupportedLocale } from 'constants/locales'
 import { L2_DEADLINE_FROM_NOW } from 'constants/misc'
 import JSBI from 'jsbi'
@@ -122,10 +121,7 @@ export function useClientSideRouter(): [boolean, (userClientSideRouter: boolean)
 }
 
 export function useRoutingAPIEnabled(): boolean {
-  const { chainId } = useActiveWeb3React()
-  const [clientSideRouter] = useClientSideRouter()
-
-  return chainId === SupportedChainId.MAINNET && !clientSideRouter
+  return false
 }
 
 export function useSetUserSlippageTolerance(): (slippageTolerance: Percent | 'auto') => void {
@@ -195,7 +191,7 @@ export function useUserTransactionTTL(): [number, (slippage: number) => void] {
   const { chainId } = useActiveWeb3React()
   const dispatch = useAppDispatch()
   const userDeadline = useAppSelector((state) => state.user.userDeadline)
-  const onL2 = Boolean(chainId && L2_CHAIN_IDS.includes(chainId))
+  const onL2 = false
   const deadline = onL2 ? L2_DEADLINE_FROM_NOW : userDeadline
 
   const setUserDeadline = useCallback(

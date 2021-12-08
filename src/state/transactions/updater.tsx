@@ -2,7 +2,6 @@ import { DEFAULT_TXN_DISMISS_MS, L2_TXN_DISMISS_MS } from 'constants/misc'
 import { useCallback, useEffect, useMemo } from 'react'
 import { useAppDispatch, useAppSelector } from 'state/hooks'
 
-import { L2_CHAIN_IDS, SupportedChainId } from '../../constants/chains'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { retry, RetryableError, RetryOptions } from '../../utils/retry'
 import { useAddPopup, useBlockNumber } from '../application/hooks'
@@ -33,12 +32,7 @@ export function shouldCheck(lastBlockNumber: number, tx: TxInterface): boolean {
   }
 }
 
-const RETRY_OPTIONS_BY_CHAIN_ID: { [chainId: number]: RetryOptions } = {
-  [SupportedChainId.ARBITRUM_ONE]: { n: 10, minWait: 250, maxWait: 1000 },
-  [SupportedChainId.ARBITRUM_RINKEBY]: { n: 10, minWait: 250, maxWait: 1000 },
-  [SupportedChainId.OPTIMISTIC_KOVAN]: { n: 10, minWait: 250, maxWait: 1000 },
-  [SupportedChainId.OPTIMISM]: { n: 10, minWait: 250, maxWait: 1000 },
-}
+const RETRY_OPTIONS_BY_CHAIN_ID: { [chainId: number]: RetryOptions } = {}
 const DEFAULT_RETRY_OPTIONS: RetryOptions = { n: 1, minWait: 0, maxWait: 0 }
 
 export default function Updater(): null {
@@ -55,7 +49,7 @@ export default function Updater(): null {
   const addPopup = useAddPopup()
 
   // speed up popup dismisall time if on L2
-  const isL2 = Boolean(chainId && L2_CHAIN_IDS.includes(chainId))
+  const isL2 = false
 
   const getReceipt = useCallback(
     (hash: string) => {

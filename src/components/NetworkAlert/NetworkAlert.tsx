@@ -1,20 +1,17 @@
-import { Trans } from '@lingui/macro'
-import {
-  ARBITRUM_HELP_CENTER_LINK,
-  L2_CHAIN_IDS,
-  OPTIMISM_HELP_CENTER_LINK,
-  SupportedChainId,
-  SupportedL2ChainId,
-} from 'constants/chains'
-import { useActiveWeb3React } from 'hooks/web3'
-import { useCallback, useState } from 'react'
+// import { Trans } from '@lingui/macro'
+// import { L2_CHAIN_IDS, SupportedChainId, SupportedL2ChainId } from 'constants/chains'
+// import { useActiveWeb3React } from 'hooks/web3'
+// import { useCallback, useState } from 'react'
 import { ArrowDownCircle, X } from 'react-feather'
-import { useArbitrumAlphaAlert, useDarkModeManager, useOptimismAlphaAlert } from 'state/user/hooks'
-import { useETHBalances } from 'state/wallet/hooks'
+// import { useArbitrumAlphaAlert, useDarkModeManager, useOptimismAlphaAlert } from 'state/user/hooks'
+// import { useETHBalances } from 'state/wallet/hooks'
 import styled, { css } from 'styled-components/macro'
 import { ExternalLink, MEDIA_WIDTHS } from 'theme'
 
-import { CHAIN_INFO } from '../../constants/chains'
+import { SupportedChainId } from '../../constants/chains'
+
+// import { CHAIN_INFO } from '../../constants/chains'
+// import { supportedChainId } from "../../utils/supportedChainId";
 
 export const DesktopTextBreak = styled.div`
   display: none;
@@ -130,7 +127,7 @@ export const OptimismWrapperBackgroundLightMode = css`
 `
 const ContentWrapper = styled.div<{ chainId: SupportedChainId; darkMode: boolean; logoUrl: string; thin?: boolean }>`
   ${({ chainId, darkMode }) =>
-    [SupportedChainId.OPTIMISM, SupportedChainId.OPTIMISTIC_KOVAN].includes(chainId)
+    SupportedChainId.WATERFALL === chainId
       ? darkMode
         ? OptimismWrapperBackgroundDarkMode
         : OptimismWrapperBackgroundLightMode
@@ -210,71 +207,50 @@ interface NetworkAlertProps {
 }
 
 export function NetworkAlert(props: NetworkAlertProps) {
-  const { account, chainId } = useActiveWeb3React()
-  const [darkMode] = useDarkModeManager()
-  const [arbitrumAlphaAcknowledged, setArbitrumAlphaAcknowledged] = useArbitrumAlphaAlert()
-  const [optimismAlphaAcknowledged, setOptimismAlphaAcknowledged] = useOptimismAlphaAlert()
-  const [locallyDismissed, setLocallyDimissed] = useState(false)
-  const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
-
-  const dismiss = useCallback(() => {
-    if (userEthBalance?.greaterThan(0)) {
-      switch (chainId) {
-        case SupportedChainId.OPTIMISM:
-          setOptimismAlphaAcknowledged(true)
-          break
-        case SupportedChainId.ARBITRUM_ONE:
-          setArbitrumAlphaAcknowledged(true)
-          break
-      }
-    } else {
-      setLocallyDimissed(true)
-    }
-  }, [chainId, setArbitrumAlphaAcknowledged, setOptimismAlphaAcknowledged, userEthBalance])
-
-  const onOptimismAndOptimismAcknowledged = SupportedChainId.OPTIMISM === chainId && optimismAlphaAcknowledged
-  const onArbitrumAndArbitrumAcknowledged = SupportedChainId.ARBITRUM_ONE === chainId && arbitrumAlphaAcknowledged
-  if (
-    !chainId ||
-    !L2_CHAIN_IDS.includes(chainId) ||
-    onArbitrumAndArbitrumAcknowledged ||
-    onOptimismAndOptimismAcknowledged ||
-    locallyDismissed
-  ) {
-    return null
-  }
-  const info = CHAIN_INFO[chainId as SupportedL2ChainId]
-  const isOptimism = [SupportedChainId.OPTIMISM, SupportedChainId.OPTIMISTIC_KOVAN].includes(chainId)
-  const depositUrl = isOptimism ? `${info.bridge}?chainId=1` : info.bridge
-  const helpCenterLink = isOptimism ? OPTIMISM_HELP_CENTER_LINK : ARBITRUM_HELP_CENTER_LINK
-  const showCloseIcon = Boolean(userEthBalance?.greaterThan(0) && !props.thin)
-  return (
-    <RootWrapper>
-      <BetaTag color={isOptimism ? '#ff0420' : '#0490ed'}>Beta</BetaTag>
-      <ContentWrapper chainId={chainId} darkMode={darkMode} logoUrl={info.logoUrl} thin={props.thin}>
-        {showCloseIcon && <CloseIcon onClick={dismiss} />}
-        <BodyText>
-          <L2Icon src={info.logoUrl} />
-          <Header thin={props.thin}>
-            <Trans>Uniswap on {info.label}</Trans>
-          </Header>
-          <Body>
-            <Trans>
-              To start trading on {info.label}, first bridge your assets from L1 to L2. Please treat this as a beta
-              release and learn about the risks before using {info.label}.
-            </Trans>
-          </Body>
-        </BodyText>
-        <Controls thin={props.thin}>
-          <LinkOutToBridge href={depositUrl} thin={props.thin}>
-            <Trans>Deposit Assets</Trans>
-            <LinkOutCircle />
-          </LinkOutToBridge>
-          <LearnMoreLink href={helpCenterLink} thin={props.thin}>
-            <Trans>Learn More</Trans>
-          </LearnMoreLink>
-        </Controls>
-      </ContentWrapper>
-    </RootWrapper>
-  )
+  // const { account, chainId } = useActiveWeb3React()
+  // const [darkMode] = useDarkModeManager()
+  // const [arbitrumAlphaAcknowledged, setArbitrumAlphaAcknowledged] = useArbitrumAlphaAlert()
+  // const [optimismAlphaAcknowledged, setOptimismAlphaAcknowledged] = useOptimismAlphaAlert()
+  // const [locallyDismissed, setLocallyDimissed] = useState(false)
+  // const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
+  //
+  // const dismiss = useCallback(() => {
+  //   setLocallyDimissed(true)
+  // }, [chainId, setArbitrumAlphaAcknowledged, setOptimismAlphaAcknowledged, userEthBalance])
+  //
+  // const onOptimismAndOptimismAcknowledged = false
+  // const onArbitrumAndArbitrumAcknowledged = true
+  return null
+  // if (
+  //   !chainId ||
+  //   !L2_CHAIN_IDS.includes(chainId) ||
+  //   onArbitrumAndArbitrumAcknowledged ||
+  //   onOptimismAndOptimismAcknowledged ||
+  //   locallyDismissed
+  // ) {
+  //   return null
+  // }
+  // const info = CHAIN_INFO[chainId ?? ]
+  // const isOptimism = false
+  // const showCloseIcon = Boolean(userEthBalance?.greaterThan(0) && !props.thin)
+  // return (
+  //   <RootWrapper>
+  //     <BetaTag color={isOptimism ? '#ff0420' : '#0490ed'}>Beta</BetaTag>
+  //     <ContentWrapper chainId={chainId} darkMode={darkMode} logoUrl={info.logoUrl} thin={props.thin}>
+  //       {showCloseIcon && <CloseIcon onClick={dismiss} />}
+  //       <BodyText>
+  //         <L2Icon src={info.logoUrl} />
+  //         <Header thin={props.thin}>
+  //           <Trans>Uniswap on {info.label}</Trans>
+  //         </Header>
+  //         <Body>
+  //           <Trans>
+  //             To start trading on {info.label}, first bridge your assets from L1 to L2. Please treat this as a beta
+  //             release and learn about the risks before using {info.label}.
+  //           </Trans>
+  //         </Body>
+  //       </BodyText>
+  //     </ContentWrapper>
+  //   </RootWrapper>
+  // )
 }

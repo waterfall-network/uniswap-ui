@@ -8,30 +8,26 @@ import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'
 import Logo from '../Logo'
 
-type Network = 'ethereum' | 'arbitrum' | 'optimism'
+type Network = 'ethereum' | 'waterfall'
 
 function chainIdToNetworkName(networkId: SupportedChainId): Network {
   switch (networkId) {
-    case SupportedChainId.MAINNET:
-      return 'ethereum'
-    case SupportedChainId.ARBITRUM_ONE:
-      return 'arbitrum'
-    case SupportedChainId.OPTIMISM:
-      return 'optimism'
+    case SupportedChainId.WATERFALL:
+      return 'waterfall'
     default:
-      return 'ethereum'
+      return 'waterfall'
   }
 }
 
 export const getTokenLogoURL = (
   address: string,
-  chainId: SupportedChainId = SupportedChainId.MAINNET
+  chainId: SupportedChainId = SupportedChainId.WATERFALL
 ): string | void => {
-  const networkName = chainIdToNetworkName(chainId)
-  const networksWithUrls = [SupportedChainId.ARBITRUM_ONE, SupportedChainId.MAINNET, SupportedChainId.OPTIMISM]
-  if (networksWithUrls.includes(chainId)) {
-    return `https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/${networkName}/assets/${address}/logo.png`
-  }
+  // const networkName = chainIdToNetworkName(chainId)
+  // const networksWithUrls = [SupportedChainId.ARBITRUM_ONE, SupportedChainId.MAINNET, SupportedChainId.OPTIMISM]
+  // if (networksWithUrls.includes(chainId)) {
+  //   return `https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/${networkName}/assets/${address}/logo.png`
+  // }
 }
 
 const StyledEthereumLogo = styled.img<{ size: string }>`

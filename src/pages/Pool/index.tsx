@@ -8,7 +8,6 @@ import { NetworkAlert } from 'components/NetworkAlert/NetworkAlert'
 import PositionList from 'components/PositionList'
 import { RowBetween, RowFixed } from 'components/Row'
 import { SwitchLocaleLink } from 'components/SwitchLocaleLink'
-import { L2_CHAIN_IDS } from 'constants/chains'
 import { useV3Positions } from 'hooks/useV3Positions'
 import { useActiveWeb3React } from 'hooks/web3'
 import { useContext } from 'react'
@@ -147,7 +146,7 @@ export default function Pool() {
 
   const filteredPositions = [...openPositions, ...(userHideClosedPositions ? [] : closedPositions)]
   const showConnectAWallet = Boolean(!account)
-  const showV2Features = !!chainId && !L2_CHAIN_IDS.includes(chainId)
+  const showV2Features = false
 
   const menuItems = [
     {
