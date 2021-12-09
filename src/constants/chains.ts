@@ -1,8 +1,9 @@
 export enum SupportedChainId {
+  MAINNET = 1,
   WATERFALL = 333777333,
 }
 
-export const ALL_SUPPORTED_CHAIN_IDS: SupportedChainId[] = [SupportedChainId.WATERFALL]
+export const ALL_SUPPORTED_CHAIN_IDS: SupportedChainId[] = [SupportedChainId.WATERFALL, SupportedChainId.MAINNET]
 
 export const L1_CHAIN_IDS = [SupportedChainId.WATERFALL] as const
 
@@ -40,6 +41,15 @@ export type ChainInfo = { readonly [chainId: number]: L1ChainInfo | L2ChainInfo 
 
 export const CHAIN_INFO: ChainInfo = {
   [SupportedChainId.WATERFALL]: {
+    docs: 'https://waterfall.network/',
+    explorer: 'https://explorer.waterfall.network',
+    infoLink: 'https://waterfall.network/',
+    label: 'Waterfall',
+    logoUrl: 'https://explorer.waterfall.network/favicon-152-precomposed.png',
+    rpcUrls: ['https://rpc.waterfall.network/rpc'],
+    nativeCurrency: { name: 'WAT', symbol: 'WAT', decimals: 18 },
+  },
+  [SupportedChainId.MAINNET]: {
     docs: 'https://waterfall.network/',
     explorer: 'https://explorer.waterfall.network',
     infoLink: 'https://waterfall.network/',
