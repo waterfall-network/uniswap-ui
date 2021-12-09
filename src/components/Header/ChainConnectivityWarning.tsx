@@ -45,7 +45,7 @@ const Wrapper = styled.div`
 
 export function ChainConnectivityWarning() {
   const { chainId } = useActiveWeb3React()
-  const info = CHAIN_INFO[chainId ?? SupportedChainId.MAINNET]
+  const info = CHAIN_INFO[chainId ?? SupportedChainId.WATERFALL]
   const label = info?.label
 
   return (
@@ -57,11 +57,7 @@ export function ChainConnectivityWarning() {
         </TitleText>
       </TitleRow>
       <BodyRow>
-        {chainId === SupportedChainId.MAINNET ? (
-          <Trans>You may have lost your network connection.</Trans>
-        ) : (
-          <Trans>You may have lost your network connection, or {label} might be down right now.</Trans>
-        )}{' '}
+        <Trans>You may have lost your network connection, or {label} might be down right now.</Trans>{' '}
         {(info as L2ChainInfo).statusPage !== undefined && (
           <span>
             <Trans>Check network status</Trans>{' '}

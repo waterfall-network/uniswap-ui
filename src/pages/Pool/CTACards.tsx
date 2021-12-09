@@ -125,7 +125,7 @@ const ResponsiveColumn = styled(AutoColumn)`
 
 export default function CTACards() {
   const { chainId } = useActiveWeb3React()
-  const { infoLink } = CHAIN_INFO[chainId ? chainId : SupportedChainId.MAINNET]
+  const { infoLink } = CHAIN_INFO[chainId ? chainId : SupportedChainId.WATERFALL]
   return (
     <CTASection>
       <CTA1 href={'https://help.uniswap.org/en/articles/5391541-providing-liquidity-on-uniswap-v3'}>

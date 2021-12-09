@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro'
 import { Currency } from '@uniswap/sdk-core'
 import Badge from 'components/Badge'
-import { CHAIN_INFO, L2_CHAIN_IDS, SupportedL2ChainId } from 'constants/chains'
+import { CHAIN_INFO, SupportedL2ChainId } from 'constants/chains'
 import useAddTokenToMetamask from 'hooks/useAddTokenToMetamask'
 import { ReactNode, useContext } from 'react'
 import { AlertCircle, AlertTriangle, ArrowUpCircle, CheckCircle } from 'react-feather'
@@ -330,7 +330,7 @@ export default function TransactionConfirmationModal({
 }: ConfirmationModalProps) {
   const { chainId } = useActiveWeb3React()
 
-  const isL2 = Boolean(chainId && L2_CHAIN_IDS.includes(chainId))
+  const isL2 = false
 
   if (!chainId) return null
 

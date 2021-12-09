@@ -264,7 +264,7 @@ export default function Header() {
   const {
     infoLink,
     nativeCurrency: { symbol },
-  } = CHAIN_INFO[chainId ? chainId : SupportedChainId.MAINNET]
+  } = CHAIN_INFO[chainId ? chainId : SupportedChainId.WATERFALL]
   const currency = symbol || 'ETH'
   return (
     <HeaderFrame showBackground={scrollY > 45}>
@@ -294,7 +294,7 @@ export default function Header() {
         >
           <Trans>Pool</Trans>
         </StyledNavLink>
-        {(!chainId || chainId === SupportedChainId.MAINNET) && (
+        {(!chainId || chainId === SupportedChainId.WATERFALL) && (
           <StyledNavLink id={`vote-nav-link`} to={'/vote'}>
             <Trans>Vote</Trans>
           </StyledNavLink>

@@ -1,7 +1,6 @@
 import { Currency, CurrencyAmount, Percent, TradeType } from '@uniswap/sdk-core'
 import { Trade as V2Trade } from '@uniswap/v2-sdk'
 import { Trade as V3Trade } from '@uniswap/v3-sdk'
-import { L2_CHAIN_IDS } from 'constants/chains'
 import JSBI from 'jsbi'
 import { useMemo } from 'react'
 
@@ -37,7 +36,7 @@ export default function useSwapSlippageTolerance(
   trade: V2Trade<Currency, Currency, TradeType> | V3Trade<Currency, Currency, TradeType> | undefined
 ): Percent {
   const { chainId } = useActiveWeb3React()
-  const onL2 = chainId && L2_CHAIN_IDS.includes(chainId)
+  const onL2 = false
   const outputDollarValue = useUSDCValue(trade?.outputAmount)
   const ethGasPrice = useGasPrice()
 
