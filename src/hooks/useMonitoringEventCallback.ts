@@ -17,7 +17,7 @@ const SUPPORTED_TRANSACTION_TYPES = [
 ]
 
 const FIREBASE_API_KEY = process.env.REACT_APP_FIREBASE_KEY
-const firebaseEnabled = typeof FIREBASE_API_KEY !== 'undefined'
+const firebaseEnabled = typeof FIREBASE_API_KEY !== 'undefined' && FIREBASE_API_KEY
 if (firebaseEnabled) initializeFirebase()
 
 function useMonitoringEventCallback() {
