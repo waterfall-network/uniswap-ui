@@ -11,7 +11,7 @@ export const WETH9_EXTENDED: { [chainId: number]: Token } = {
   ...WETH9,
   [SupportedChainId.WATERFALL]: new Token(
     SupportedChainId.WATERFALL,
-    '0xC3687A7a67aFf40D39044Ee936bca63E25901B52',
+    '0x8277072D6598141F61895835707452726fcBDf85',
     18,
     'WETH',
     'Wrapped Ether'
