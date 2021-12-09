@@ -174,8 +174,8 @@ export default function NetworkSelector() {
 
   const isOnL2 = chainId ? L2_CHAIN_IDS.includes(chainId) : false
   const showSelector = Boolean(implements3085 || isOnL2)
-  const mainnetInfo = CHAIN_INFO[SupportedChainId.MAINNET]
-
+  const mainnetInfo = CHAIN_INFO[SupportedChainId.WATERFALL]
+  console.log(chainId, info, mainnetInfo)
   const conditionalToggle = useCallback(() => {
     if (showSelector) {
       toggle()
@@ -240,8 +240,8 @@ export default function NetworkSelector() {
             <Trans>Select a network</Trans>
           </FlyoutHeader>
           <Row targetChain={SupportedChainId.WATERFALL} />
-          <Row targetChain={SupportedChainId.OPTIMISM} />
-          <Row targetChain={SupportedChainId.ARBITRUM_ONE} />
+          {/*<Row targetChain={SupportedChainId.OPTIMISM} />*/}
+          {/*<Row targetChain={SupportedChainId.ARBITRUM_ONE} />*/}
         </FlyoutMenu>
       )}
     </SelectorWrapper>
