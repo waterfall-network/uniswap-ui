@@ -1,7 +1,7 @@
 import { arrayify } from '@ethersproject/bytes'
 import { parseBytes32String } from '@ethersproject/strings'
 import { Currency, Token } from '@uniswap/sdk-core'
-import { CHAIN_INFO, L2_CHAIN_IDS, SupportedChainId, SupportedL2ChainId } from 'constants/chains'
+import { SupportedChainId } from 'constants/chains'
 import { useMemo } from 'react'
 
 import { createTokenFilterFunction } from '../components/SearchModal/filtering'
@@ -73,40 +73,8 @@ export function useUnsupportedTokens(): { [address: string]: Token } {
   const unsupportedTokens = useTokensFromMap(unsupportedTokensMap, false)
 
   // checks the default L2 lists to see if `bridgeInfo` has an L1 address value that is unsupported
-  const l2InferredBlockedTokens: typeof unsupportedTokens = useMemo(() => {
-    if (!chainId || !L2_CHAIN_IDS.includes(chainId)) {
-      return {}
-    }
 
-    if (!listsByUrl) {
-      return {}
-    }
-
-    const listUrl = CHAIN_INFO[chainId as SupportedL2ChainId].defaultListUrl
-    const { current: list } = listsByUrl[listUrl]
-    if (!list) {
-      return {}
-    }
-
-    const unsupportedSet = new Set(Object.keys(unsupportedTokens))
-
-    return list.tokens.reduce((acc, tokenInfo) => {
-      const bridgeInfo = tokenInfo.extensions?.bridgeInfo as unknown as BridgeInfo
-      if (
-        bridgeInfo &&
-        bridgeInfo[SupportedChainId.MAINNET] &&
-        bridgeInfo[SupportedChainId.MAINNET].tokenAddress &&
-        unsupportedSet.has(bridgeInfo[SupportedChainId.MAINNET].tokenAddress)
-      ) {
-        const address = bridgeInfo[SupportedChainId.MAINNET].tokenAddress
-        // don't rely on decimals--it's possible that a token could be bridged w/ different decimals on the L2
-        return { ...acc, [address]: new Token(SupportedChainId.MAINNET, address, tokenInfo.decimals) }
-      }
-      return acc
-    }, {})
-  }, [chainId, listsByUrl, unsupportedTokens])
-
-  return { ...unsupportedTokens, ...l2InferredBlockedTokens }
+  return unsupportedTokens
 }
 
 export function useSearchInactiveTokenLists(search: string | undefined, minResults = 10): WrappedTokenInfo[] {
@@ -234,7 +202,7 @@ export function useCurrency(currencyId: string | null | undefined): Currency | n
       chainId
         ? ExtendedEther.onChain(chainId)
         : // display mainnet when not connected
-          ExtendedEther.onChain(SupportedChainId.MAINNET),
+          ExtendedEther.onChain(SupportedChainId.WATERFALL),
     [chainId]
   )
   const weth = chainId ? WETH9_EXTENDED[chainId] : undefined

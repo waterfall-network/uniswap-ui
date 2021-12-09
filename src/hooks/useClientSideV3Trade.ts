@@ -1,6 +1,5 @@
 import { Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
 import { Route, SwapQuoter, Trade } from '@uniswap/v3-sdk'
-import { SupportedChainId } from 'constants/chains'
 import JSBI from 'jsbi'
 import { useMemo } from 'react'
 import { V3TradeState } from 'state/routing/types'
@@ -10,10 +9,7 @@ import { useAllV3Routes } from './useAllV3Routes'
 import { useV3Quoter } from './useContract'
 import { useActiveWeb3React } from './web3'
 
-const QUOTE_GAS_OVERRIDES: { [chainId: number]: number } = {
-  [SupportedChainId.ARBITRUM_ONE]: 25_000_000,
-  [SupportedChainId.ARBITRUM_RINKEBY]: 25_000_000,
-}
+const QUOTE_GAS_OVERRIDES: { [chainId: number]: number } = {}
 
 const DEFAULT_GAS_QUOTE = 2_000_000
 

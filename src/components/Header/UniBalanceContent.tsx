@@ -61,7 +61,7 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
     [blockTimestamp, chainId, totalSupply, unclaimedUni, uni]
   )
 
-  const { infoLink } = CHAIN_INFO[chainId ? chainId : SupportedChainId.MAINNET]
+  const { infoLink } = CHAIN_INFO[chainId ? chainId : SupportedChainId.WATERFALL]
 
   return (
     <ContentWrapper gap="lg">

@@ -7,7 +7,6 @@ import useCurrentBlockTimestamp from 'hooks/useCurrentBlockTimestamp'
 import JSBI from 'jsbi'
 import { ReactNode, useMemo } from 'react'
 
-import { DAI, UNI, USDC, USDT, WBTC, WETH9_EXTENDED } from '../../constants/tokens'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { NEVER_RELOAD, useMultipleContractSingleData } from '../multicall/hooks'
 import { tryParseAmount } from '../swap/hooks'
@@ -17,32 +16,6 @@ const STAKING_REWARDS_INTERFACE = new Interface(STAKING_REWARDS_ABI)
 export const STAKING_GENESIS = 1600387200
 
 export const REWARDS_DURATION_DAYS = 60
-
-export const STAKING_REWARDS_INFO: {
-  [chainId: number]: {
-    tokens: [Token, Token]
-    stakingRewardAddress: string
-  }[]
-} = {
-  1: [
-    {
-      tokens: [WETH9_EXTENDED[1], DAI],
-      stakingRewardAddress: '0xa1484C3aa22a66C62b77E0AE78E15258bd0cB711',
-    },
-    {
-      tokens: [WETH9_EXTENDED[1], USDC],
-      stakingRewardAddress: '0x7FBa4B8Dc5E7616e59622806932DBea72537A56b',
-    },
-    {
-      tokens: [WETH9_EXTENDED[1], USDT],
-      stakingRewardAddress: '0x6C3e4cb2E96B01F4b866965A91ed4437839A121a',
-    },
-    {
-      tokens: [WETH9_EXTENDED[1], WBTC],
-      stakingRewardAddress: '0xCA35e32e7926b96A9988f61d510E038108d8068e',
-    },
-  ],
-}
 
 export interface StakingInfo {
   // the address of the reward contract
@@ -72,6 +45,13 @@ export interface StakingInfo {
   ) => CurrencyAmount<Token>
 }
 
+export const STAKING_REWARDS_INFO: {
+  [chainId: number]: {
+    tokens: [Token, Token]
+    stakingRewardAddress: string
+  }[]
+} = {}
+
 // gets the staking info from the network for the active chain id
 export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
   const { chainId, account } = useActiveWeb3React()
@@ -94,7 +74,7 @@ export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
     [chainId, pairToFilterBy]
   )
 
-  const uni = chainId ? UNI[chainId] : undefined
+  const uni = undefined
 
   const rewardsAddresses = useMemo(() => info.map(({ stakingRewardAddress }) => stakingRewardAddress), [info])
 
@@ -229,17 +209,12 @@ export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
 
 export function useTotalUniEarned(): CurrencyAmount<Token> | undefined {
   const { chainId } = useActiveWeb3React()
-  const uni = chainId ? UNI[chainId] : undefined
+  const uni = undefined
   const stakingInfos = useStakingInfo()
 
   return useMemo(() => {
     if (!uni) return undefined
-    return (
-      stakingInfos?.reduce(
-        (accumulator, stakingInfo) => accumulator.add(stakingInfo.earnedAmount),
-        CurrencyAmount.fromRawAmount(uni, '0')
-      ) ?? CurrencyAmount.fromRawAmount(uni, '0')
-    )
+    return CurrencyAmount.fromRawAmount(uni, '0')
   }, [stakingInfos, uni])
 }
 

@@ -1,13 +1,7 @@
 import { CHAIN_INFO, SupportedChainId } from '../constants/chains'
 
 const ETHERSCAN_PREFIXES: { [chainId: number]: string } = {
-  [SupportedChainId.MAINNET]: '',
-  [SupportedChainId.ROPSTEN]: 'ropsten.',
-  [SupportedChainId.RINKEBY]: 'rinkeby.',
-  [SupportedChainId.GOERLI]: 'goerli.',
-  [SupportedChainId.KOVAN]: 'kovan.',
-  [SupportedChainId.OPTIMISM]: 'optimistic.',
-  [SupportedChainId.OPTIMISTIC_KOVAN]: 'kovan-optimistic.',
+  [SupportedChainId.WATERFALL]: '',
 }
 
 export enum ExplorerDataType {
@@ -24,34 +18,6 @@ export enum ExplorerDataType {
  * @param type the type of the data
  */
 export function getExplorerLink(chainId: number, data: string, type: ExplorerDataType): string {
-  if (chainId === SupportedChainId.ARBITRUM_ONE) {
-    switch (type) {
-      case ExplorerDataType.TRANSACTION:
-        return `https://arbiscan.io/tx/${data}`
-      case ExplorerDataType.ADDRESS:
-      case ExplorerDataType.TOKEN:
-        return `https://arbiscan.io/address/${data}`
-      case ExplorerDataType.BLOCK:
-        return `https://arbiscan.io/block/${data}`
-      default:
-        return `https://arbiscan.io/`
-    }
-  }
-
-  if (chainId === SupportedChainId.ARBITRUM_RINKEBY) {
-    switch (type) {
-      case ExplorerDataType.TRANSACTION:
-        return `https://rinkeby-explorer.arbitrum.io/tx/${data}`
-      case ExplorerDataType.ADDRESS:
-      case ExplorerDataType.TOKEN:
-        return `https://rinkeby-explorer.arbitrum.io/address/${data}`
-      case ExplorerDataType.BLOCK:
-        return `https://rinkeby-explorer.arbitrum.io/block/${data}`
-      default:
-        return `https://rinkeby-explorer.arbitrum.io/`
-    }
-  }
-
   let prefix = `https://${ETHERSCAN_PREFIXES[chainId] ?? ''}etherscan.io`
   if (chainId === SupportedChainId.WATERFALL) prefix = CHAIN_INFO[chainId].explorer
 
@@ -63,9 +29,6 @@ export function getExplorerLink(chainId: number, data: string, type: ExplorerDat
       return `${prefix}/token/${data}`
 
     case ExplorerDataType.BLOCK:
-      if (chainId === SupportedChainId.OPTIMISM || chainId === SupportedChainId.OPTIMISTIC_KOVAN) {
-        return `${prefix}/tx/${data}`
-      }
       return `${prefix}/block/${data}`
 
     case ExplorerDataType.ADDRESS:

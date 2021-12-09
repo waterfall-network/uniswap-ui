@@ -1,12 +1,5 @@
 import { Trans } from '@lingui/macro'
-import {
-  ARBITRUM_HELP_CENTER_LINK,
-  CHAIN_INFO,
-  L2_CHAIN_IDS,
-  OPTIMISM_HELP_CENTER_LINK,
-  SupportedChainId,
-  SupportedL2ChainId,
-} from 'constants/chains'
+import { CHAIN_INFO, SupportedChainId, SupportedL1ChainId, SupportedL2ChainId } from 'constants/chains'
 import { useOnClickOutside } from 'hooks/useOnClickOutside'
 import { useActiveWeb3React } from 'hooks/web3'
 import { useCallback, useRef } from 'react'
@@ -139,24 +132,14 @@ const StyledChevronDown = styled(ChevronDown)`
 `
 const BridgeText = ({ chainId }: { chainId: SupportedL2ChainId }) => {
   switch (chainId) {
-    case SupportedChainId.ARBITRUM_ONE:
-    case SupportedChainId.ARBITRUM_RINKEBY:
-      return <Trans>Arbitrum Bridge</Trans>
-    case SupportedChainId.OPTIMISM:
-    case SupportedChainId.OPTIMISTIC_KOVAN:
-      return <Trans>Optimism Gateway</Trans>
     default:
       return <Trans>Bridge</Trans>
   }
 }
-const ExplorerText = ({ chainId }: { chainId: SupportedL2ChainId }) => {
+const ExplorerText = ({ chainId }: { chainId: SupportedL1ChainId }) => {
   switch (chainId) {
-    case SupportedChainId.ARBITRUM_ONE:
-    case SupportedChainId.ARBITRUM_RINKEBY:
-      return <Trans>Arbiscan</Trans>
-    case SupportedChainId.OPTIMISM:
-    case SupportedChainId.OPTIMISTIC_KOVAN:
-      return <Trans>Optimistic Etherscan</Trans>
+    case SupportedChainId.WATERFALL:
+      return <Trans>Waterfall Explorer</Trans>
     default:
       return <Trans>Explorer</Trans>
   }
@@ -170,11 +153,10 @@ export default function NetworkSelector() {
   useOnClickOutside(node, open ? toggle : undefined)
   const implements3085 = useAppSelector((state) => state.application.implements3085)
 
-  const info = chainId ? CHAIN_INFO[chainId] : undefined
+  const info = chainId ? CHAIN_INFO[chainId] : CHAIN_INFO[SupportedChainId.WATERFALL]
 
-  const isOnL2 = chainId ? L2_CHAIN_IDS.includes(chainId) : false
+  const isOnL2 = false
   const showSelector = Boolean(implements3085 || isOnL2)
-  const mainnetInfo = CHAIN_INFO[SupportedChainId.MAINNET]
 
   const conditionalToggle = useCallback(() => {
     if (showSelector) {
@@ -195,8 +177,8 @@ export default function NetworkSelector() {
       toggle()
     }
     const active = chainId === targetChain
-    const hasExtendedInfo = L2_CHAIN_IDS.includes(targetChain)
-    const isOptimism = targetChain === SupportedChainId.OPTIMISM
+    const hasExtendedInfo = false
+    const isOptimism = false
     const rowText = `${CHAIN_INFO[targetChain].label}${isOptimism ? ' (Optimism)' : ''}`
     const RowContent = () => (
       <FlyoutRow onClick={handleRowClick} active={active}>
@@ -205,20 +187,13 @@ export default function NetworkSelector() {
         {chainId === targetChain && <FlyoutRowActiveIndicator />}
       </FlyoutRow>
     )
-    const helpCenterLink = isOptimism ? OPTIMISM_HELP_CENTER_LINK : ARBITRUM_HELP_CENTER_LINK
     if (active && hasExtendedInfo) {
       return (
         <ActiveRowWrapper>
           <RowContent />
           <ActiveRowLinkList>
-            <ExternalLink href={CHAIN_INFO[targetChain as SupportedL2ChainId].bridge}>
-              <BridgeText chainId={chainId} /> <LinkOutCircle />
-            </ExternalLink>
             <ExternalLink href={CHAIN_INFO[targetChain].explorer}>
               <ExplorerText chainId={chainId} /> <LinkOutCircle />
-            </ExternalLink>
-            <ExternalLink href={helpCenterLink}>
-              <Trans>Help Center</Trans> <LinkOutCircle />
             </ExternalLink>
           </ActiveRowLinkList>
         </ActiveRowWrapper>
@@ -230,7 +205,7 @@ export default function NetworkSelector() {
   return (
     <SelectorWrapper ref={node as any}>
       <SelectorControls onClick={conditionalToggle} interactive={showSelector}>
-        <SelectorLogo interactive={showSelector} src={info.logoUrl || mainnetInfo.logoUrl} />
+        <SelectorLogo interactive={showSelector} src={info.logoUrl} />
         <SelectorLabel>{info.label}</SelectorLabel>
         {showSelector && <StyledChevronDown />}
       </SelectorControls>
@@ -240,8 +215,6 @@ export default function NetworkSelector() {
             <Trans>Select a network</Trans>
           </FlyoutHeader>
           <Row targetChain={SupportedChainId.WATERFALL} />
-          <Row targetChain={SupportedChainId.OPTIMISM} />
-          <Row targetChain={SupportedChainId.ARBITRUM_ONE} />
         </FlyoutMenu>
       )}
     </SelectorWrapper>

@@ -200,7 +200,7 @@ export default function SettingsTab({ placeholderSlippage }: { placeholderSlippa
               <Trans>Interface Settings</Trans>
             </Text>
 
-            {chainId === SupportedChainId.MAINNET && (
+            {chainId === SupportedChainId.WATERFALL && (
               <RowBetween>
                 <RowFixed>
                   <ThemedText.Black fontWeight={400} fontSize={14} color={theme.text2}>
