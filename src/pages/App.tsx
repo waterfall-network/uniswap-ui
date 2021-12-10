@@ -36,6 +36,8 @@ const AppWrapper = styled.div`
   display: flex;
   flex-flow: column;
   align-items: flex-start;
+  //justify-content: space-between;
+  min-height: 100vh;
 `
 
 const BodyWrapper = styled.div`
@@ -67,6 +69,7 @@ const Marginer = styled.div`
 
 const Footer = styled.p`
   padding: 20px;
+  text-align: center;
 `
 
 function TopLevelModals() {
