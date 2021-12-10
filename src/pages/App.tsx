@@ -65,6 +65,10 @@ const Marginer = styled.div`
   margin-top: 5rem;
 `
 
+const Footer = styled.p`
+  padding: 20px;
+`
+
 function TopLevelModals() {
   const open = useModalOpen(ApplicationModal.ADDRESS_CLAIM)
   const toggle = useToggleModal(ApplicationModal.ADDRESS_CLAIM)
@@ -136,6 +140,13 @@ export default function App() {
             </Suspense>
             <Marginer />
           </BodyWrapper>
+
+          <Footer>
+            Please note that this technology is still in a test mode and needs more profound elaboration to be released
+            as a ready-made product. Security checks are not performed yet, that is why we do not recommend processing
+            any sensitive information and transferring funds and we do not take the responsibility for damage caused by
+            the failures of this version.
+          </Footer>
         </AppWrapper>
       </Web3ReactManager>
     </ErrorBoundary>
