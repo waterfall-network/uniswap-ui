@@ -28,7 +28,7 @@ export class ExtendedEther extends NativeCurrency {
   }
 
   equals(other: Currency): boolean {
-    return this.decimals === other.decimals
+    return this.decimals === other.decimals && this.symbol === other.symbol
   }
 
   private static _cachedEther: { [chainId: number]: ExtendedEther } = {}
