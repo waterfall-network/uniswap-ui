@@ -1,4 +1,4 @@
-import { Ether, Token, WETH9 } from '@uniswap/sdk-core'
+import { Currency, NativeCurrency, Token, WETH9 } from '@uniswap/sdk-core'
 
 // import { UNI_ADDRESS } from './addresses'
 import { SupportedChainId } from './chains'
@@ -18,10 +18,17 @@ export const WETH9_EXTENDED: { [chainId: number]: Token } = {
   ),
 }
 
-export class ExtendedEther extends Ether {
+export class ExtendedEther extends NativeCurrency {
   public get wrapped(): Token {
     if (this.chainId in WETH9_EXTENDED) return WETH9_EXTENDED[this.chainId]
     throw new Error('Unsupported chain ID')
+  }
+  protected constructor(chainId: number) {
+    super(chainId, 18, 'WAT', 'Waterfall')
+  }
+
+  equals(other: Currency): boolean {
+    return this.decimals === other.decimals
   }
 
   private static _cachedEther: { [chainId: number]: ExtendedEther } = {}
@@ -30,3 +37,5 @@ export class ExtendedEther extends Ether {
     return this._cachedEther[chainId] ?? (this._cachedEther[chainId] = new ExtendedEther(chainId))
   }
 }
+
+console.log(ExtendedEther.onChain(1))
