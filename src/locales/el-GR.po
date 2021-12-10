@@ -1175,8 +1175,8 @@ msgid "Optimism Gateway"
 msgstr "Πύλη αισιοδοξίας"
 
 #: src/components/DowntimeWarning/index.tsx
-msgid "Optimistic Ethereum is in Beta and may experience downtime. Optimism expects planned downtime to upgrade the network in the near future. During downtime, your position will not earn fees and you will be unable to remove liquidity. <0>Read more.</0>"
-msgstr "Το Optimistic Ethereum βρίσκεται σε έκδοση Beta και ενδέχεται να αντιμετωπίσει διακοπές λειτουργίας. Η αισιοδοξία αναμένει προγραμματισμένο χρόνο διακοπής λειτουργίας για την αναβάθμιση του δικτύου στο εγγύς μέλλον. Κατά τη διάρκεια του χρόνου διακοπής, η θέση σας δεν θα κερδίσει τέλη και δεν θα μπορείτε να αφαιρέσετε τη ρευστότητα. <0> Διαβάστε περισσότερα.</0>"
+msgid "Optimistic Waterfall is in Beta and may experience downtime. Optimism expects planned downtime to upgrade the network in the near future. During downtime, your position will not earn fees and you will be unable to remove liquidity. <0>Read more.</0>"
+msgstr "Το Optimistic Waterfall βρίσκεται σε έκδοση Beta και ενδέχεται να αντιμετωπίσει διακοπές λειτουργίας. Η αισιοδοξία αναμένει προγραμματισμένο χρόνο διακοπής λειτουργίας για την αναβάθμιση του δικτύου στο εγγύς μέλλον. Κατά τη διάρκεια του χρόνου διακοπής, η θέση σας δεν θα κερδίσει τέλη και δεν θα μπορείτε να αφαιρέσετε τη ρευστότητα. <0> Διαβάστε περισσότερα.</0>"
 
 #: src/components/Header/NetworkSelector.tsx
 msgid "Optimistic Etherscan"
@@ -1216,12 +1216,12 @@ msgid "Please confirm you would like to remove this list by typing REMOVE"
 msgstr "Επιβεβαιώστε ότι θέλετε να καταργήσετε αυτήν τη λίστα πληκτρολογώντας REMOVE"
 
 #: src/components/vote/ProposalEmptyState.tsx
-msgid "Please connect to Layer 1 Ethereum"
-msgstr "Συνδεθείτε στο Layer 1 Ethereum"
+msgid "Please connect to Layer 1 Waterfall"
+msgstr "Συνδεθείτε στο Layer 1 Waterfall"
 
 #: src/components/WalletModal/index.tsx
-msgid "Please connect to the appropriate Ethereum network."
-msgstr "Συνδεθείτε στο κατάλληλο δίκτυο του Ethereum."
+msgid "Please connect to the appropriate Waterfall network."
+msgstr "Συνδεθείτε στο κατάλληλο δίκτυο του Waterfall."
 
 #: src/components/Settings/index.tsx
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
@@ -1826,8 +1826,8 @@ msgid "Uniswap available in: <0>{0}</0>"
 msgstr "Το Uniswap διατίθεται σε: <0>{0}</0>"
 
 #: src/components/vote/ProposalEmptyState.tsx
-msgid "Uniswap governance is only available on Layer 1. Switch your network to Ethereum Mainnet to view Proposals and Vote."
-msgstr "Η διαχείριση Uniswap είναι διαθέσιμη μόνο στο Layer 1. Αλλάξτε το δίκτυό σας στο Ethereum Mainnet για να δείτε Προτάσεις και Ψηφοφορία."
+msgid "Uniswap governance is only available on Layer 1. Switch your network to Waterfall Mainnet to view Proposals and Vote."
+msgstr "Η διαχείριση Uniswap είναι διαθέσιμη μόνο στο Layer 1. Αλλάξτε το δίκτυό σας στο Waterfall Mainnet για να δείτε Προτάσεις και Ψηφοφορία."
 
 #: src/pages/Earn/index.tsx
 msgid "Uniswap liquidity mining"
@@ -1905,8 +1905,8 @@ msgid "V2"
 msgstr "V2"
 
 #: src/pages/Pool/v2.tsx
-msgid "V2 is not available on Layer 2. Switch to Layer 1 Ethereum."
-msgstr "Το V2 δεν είναι διαθέσιμο στο Layer 2. Μετάβαση στο Layer 1 Ethereum."
+msgid "V2 is not available on Layer 2. Switch to Layer 1 Waterfall."
+msgstr "Το V2 δεν είναι διαθέσιμο στο Layer 2. Μετάβαση στο Layer 1 Waterfall."
 
 #: src/pages/Pool/index.tsx
 msgid "V2 liquidity"

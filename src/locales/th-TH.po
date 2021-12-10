@@ -1175,8 +1175,8 @@ msgid "Optimism Gateway"
 msgstr "เกตเวย์การมองในแง่ดี"
 
 #: src/components/DowntimeWarning/index.tsx
-msgid "Optimistic Ethereum is in Beta and may experience downtime. Optimism expects planned downtime to upgrade the network in the near future. During downtime, your position will not earn fees and you will be unable to remove liquidity. <0>Read more.</0>"
-msgstr "Ethereum ในแง่ดีอยู่ในเบต้าและอาจประสบปัญหาการหยุดทำงาน การมองในแง่ดีคาดว่าการหยุดทำงานตามแผนเพื่ออัพเกรดเครือข่ายในอนาคตอันใกล้นี้ ในช่วงหยุดทำงาน โพซิชั่นของคุณจะไม่ได้รับค่าธรรมเนียมและคุณจะไม่สามารถลบสภาพคล่องได้ <0>อ่านต่อ.</0>"
+msgid "Optimistic Waterfall is in Beta and may experience downtime. Optimism expects planned downtime to upgrade the network in the near future. During downtime, your position will not earn fees and you will be unable to remove liquidity. <0>Read more.</0>"
+msgstr "Waterfall ในแง่ดีอยู่ในเบต้าและอาจประสบปัญหาการหยุดทำงาน การมองในแง่ดีคาดว่าการหยุดทำงานตามแผนเพื่ออัพเกรดเครือข่ายในอนาคตอันใกล้นี้ ในช่วงหยุดทำงาน โพซิชั่นของคุณจะไม่ได้รับค่าธรรมเนียมและคุณจะไม่สามารถลบสภาพคล่องได้ <0>อ่านต่อ.</0>"
 
 #: src/components/Header/NetworkSelector.tsx
 msgid "Optimistic Etherscan"
@@ -1216,12 +1216,12 @@ msgid "Please confirm you would like to remove this list by typing REMOVE"
 msgstr "โปรดยืนยันว่าคุณต้องการลบรายการนี้โดยพิมพ์ REMOVE"
 
 #: src/components/vote/ProposalEmptyState.tsx
-msgid "Please connect to Layer 1 Ethereum"
-msgstr "โปรดเชื่อมต่อกับ Layer 1 Ethereum"
+msgid "Please connect to Layer 1 Waterfall"
+msgstr "โปรดเชื่อมต่อกับ Layer 1 Waterfall"
 
 #: src/components/WalletModal/index.tsx
-msgid "Please connect to the appropriate Ethereum network."
-msgstr "โปรดเชื่อมต่อกับเครือข่าย Ethereum ที่เหมาะสม"
+msgid "Please connect to the appropriate Waterfall network."
+msgstr "โปรดเชื่อมต่อกับเครือข่าย Waterfall ที่เหมาะสม"
 
 #: src/components/Settings/index.tsx
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
@@ -1826,8 +1826,8 @@ msgid "Uniswap available in: <0>{0}</0>"
 msgstr "Uniswap มีให้ใน: <0>{0}</0>"
 
 #: src/components/vote/ProposalEmptyState.tsx
-msgid "Uniswap governance is only available on Layer 1. Switch your network to Ethereum Mainnet to view Proposals and Vote."
-msgstr "การกำกับดูแล Uniswap ใช้ได้เฉพาะในเลเยอร์ 1 เท่านั้น เปลี่ยนเครือข่ายของคุณเป็น Ethereum Mainnet เพื่อดูข้อเสนอและการโหวต"
+msgid "Uniswap governance is only available on Layer 1. Switch your network to Waterfall Mainnet to view Proposals and Vote."
+msgstr "การกำกับดูแล Uniswap ใช้ได้เฉพาะในเลเยอร์ 1 เท่านั้น เปลี่ยนเครือข่ายของคุณเป็น Waterfall Mainnet เพื่อดูข้อเสนอและการโหวต"
 
 #: src/pages/Earn/index.tsx
 msgid "Uniswap liquidity mining"
@@ -1905,8 +1905,8 @@ msgid "V2"
 msgstr "V2"
 
 #: src/pages/Pool/v2.tsx
-msgid "V2 is not available on Layer 2. Switch to Layer 1 Ethereum."
-msgstr "V2 ไม่พร้อมใช้งานใน Layer 2 เปลี่ยนเป็น Layer 1 Ethereum"
+msgid "V2 is not available on Layer 2. Switch to Layer 1 Waterfall."
+msgstr "V2 ไม่พร้อมใช้งานใน Layer 2 เปลี่ยนเป็น Layer 1 Waterfall"
 
 #: src/pages/Pool/index.tsx
 msgid "V2 liquidity"

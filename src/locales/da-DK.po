@@ -1175,8 +1175,8 @@ msgid "Optimism Gateway"
 msgstr "Optimisme Gateway"
 
 #: src/components/DowntimeWarning/index.tsx
-msgid "Optimistic Ethereum is in Beta and may experience downtime. Optimism expects planned downtime to upgrade the network in the near future. During downtime, your position will not earn fees and you will be unable to remove liquidity. <0>Read more.</0>"
-msgstr "Optimistisk Ethereum er i Beta og kan opleve nedetid. Optimisme forventer, at planlagt nedetid vil opgradere netværket i den nærmeste fremtid. I nedetid tjener din position ikke gebyrer, og du vil ikke være i stand til at fjerne likviditet. <0> Læs mere.</0>"
+msgid "Optimistic Waterfall is in Beta and may experience downtime. Optimism expects planned downtime to upgrade the network in the near future. During downtime, your position will not earn fees and you will be unable to remove liquidity. <0>Read more.</0>"
+msgstr "Optimistisk Waterfall er i Beta og kan opleve nedetid. Optimisme forventer, at planlagt nedetid vil opgradere netværket i den nærmeste fremtid. I nedetid tjener din position ikke gebyrer, og du vil ikke være i stand til at fjerne likviditet. <0> Læs mere.</0>"
 
 #: src/components/Header/NetworkSelector.tsx
 msgid "Optimistic Etherscan"
@@ -1216,12 +1216,12 @@ msgid "Please confirm you would like to remove this list by typing REMOVE"
 msgstr "Bekræft, at du vil fjerne denne liste ved at skrive REMOVE"
 
 #: src/components/vote/ProposalEmptyState.tsx
-msgid "Please connect to Layer 1 Ethereum"
-msgstr "Opret forbindelse til Layer 1 Ethereum"
+msgid "Please connect to Layer 1 Waterfall"
+msgstr "Opret forbindelse til Layer 1 Waterfall"
 
 #: src/components/WalletModal/index.tsx
-msgid "Please connect to the appropriate Ethereum network."
-msgstr "Opret forbindelse til det relevante Ethereum-netværk."
+msgid "Please connect to the appropriate Waterfall network."
+msgstr "Opret forbindelse til det relevante Waterfall-netværk."
 
 #: src/components/Settings/index.tsx
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
@@ -1826,8 +1826,8 @@ msgid "Uniswap available in: <0>{0}</0>"
 msgstr "Uniswap tilgængelig i: <0>{0}</0>"
 
 #: src/components/vote/ProposalEmptyState.tsx
-msgid "Uniswap governance is only available on Layer 1. Switch your network to Ethereum Mainnet to view Proposals and Vote."
-msgstr "Uniswap-styring er kun tilgængelig i lag 1. Skift dit netværk til Ethereum Mainnet for at se forslag og afstemning."
+msgid "Uniswap governance is only available on Layer 1. Switch your network to Waterfall Mainnet to view Proposals and Vote."
+msgstr "Uniswap-styring er kun tilgængelig i lag 1. Skift dit netværk til Waterfall Mainnet for at se forslag og afstemning."
 
 #: src/pages/Earn/index.tsx
 msgid "Uniswap liquidity mining"
@@ -1905,8 +1905,8 @@ msgid "V2"
 msgstr "V2"
 
 #: src/pages/Pool/v2.tsx
-msgid "V2 is not available on Layer 2. Switch to Layer 1 Ethereum."
-msgstr "V2 er ikke tilgængelig på lag 2. Skift til lag 1 Ethereum."
+msgid "V2 is not available on Layer 2. Switch to Layer 1 Waterfall."
+msgstr "V2 er ikke tilgængelig på lag 2. Skift til lag 1 Waterfall."
 
 #: src/pages/Pool/index.tsx
 msgid "V2 liquidity"
