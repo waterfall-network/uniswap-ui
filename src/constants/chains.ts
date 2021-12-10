@@ -59,7 +59,3 @@ export const CHAIN_INFO: ChainInfo = {
     nativeCurrency: { name: 'WAT', symbol: 'WAT', decimals: 18 },
   },
 }
-
-// export const ARBITRUM_HELP_CENTER_LINK = 'https://help.uniswap.org/en/collections/3137787-uniswap-on-arbitrum'
-// export const OPTIMISM_HELP_CENTER_LINK =
-//   'https://help.uniswap.org/en/collections/3137778-uniswap-on-optimistic-ethereum-oξ'
