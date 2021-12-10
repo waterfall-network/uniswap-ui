@@ -7,7 +7,7 @@ import { SupportedChainId } from './chains'
 type AddressMap = { [chainId: number]: string }
 //console.log(V3_FACTORY_ADDRESS)
 export const UNI_ADDRESS: AddressMap = constructSameAddressMap('0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984')
-export const MULTICALL_ADDRESS: AddressMap = constructSameAddressMap('0xCFe3E16830aFdCeE0611188626502D9BAf116c85')
+export const MULTICALL_ADDRESS: AddressMap = constructSameAddressMap('0x07f96aCe3579e83faAAa6E4ab8972B2De3949Cff')
 // export const V2_FACTORY_ADDRESSES: AddressMap = constructSameAddressMap('0x5F8d320D7a13e9E543e6649787054b131B7dCD78')
 export const V2_FACTORY_ADDRESSES: AddressMap = constructSameAddressMap(V2_FACTORY_ADDRESS)
 export const V2_ROUTER_ADDRESS: AddressMap = constructSameAddressMap('0x6483e31f916068D7812cbe0ffcaDC2189D178591')
@@ -40,9 +40,9 @@ export const ARGENT_WALLET_DETECTOR_ADDRESS: AddressMap = {
   [SupportedChainId.WATERFALL]: '0xeca4B0bDBf7c55E9b7925919d03CbF8Dc82537E8',
 }
 export const V3_CORE_FACTORY_ADDRESSES: AddressMap = constructSameAddressMap(V3_FACTORY_ADDRESS)
-export const QUOTER_ADDRESSES: AddressMap = constructSameAddressMap('0xf46A756eD3F4F1E84f0Fd109affd3c53DF3d3Bab')
+export const QUOTER_ADDRESSES: AddressMap = constructSameAddressMap('0xC106104e2EaD5e2E5537F073368901b89EC33257')
 export const NONFUNGIBLE_POSITION_MANAGER_ADDRESSES: AddressMap = constructSameAddressMap(
-  '0x0BB3ff4eE137bD8966DcB6b45A81f19d7dEf99Fa'
+  '0x8021dFca68B4c31c9446e1fd6C81908F5018Bbd0'
 )
 export const ENS_REGISTRAR_ADDRESSES: AddressMap = {
   [SupportedChainId.WATERFALL]: '0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e',
@@ -50,5 +50,5 @@ export const ENS_REGISTRAR_ADDRESSES: AddressMap = {
 export const SOCKS_CONTROLLER_ADDRESSES: AddressMap = {
   [SupportedChainId.WATERFALL]: '0x65770b5283117639760beA3F867b69b3697a91dd',
 }
-export const SWAP_ROUTER_ADDRESSES: AddressMap = constructSameAddressMap('0xeA5e1a0827746cacdAc02F43Bde01f82915B5f4c')
-export const V3_MIGRATOR_ADDRESSES: AddressMap = constructSameAddressMap('0xD5e5Df77E32A1EA3c5b22d274a6Ff77a874E4240')
+export const SWAP_ROUTER_ADDRESSES: AddressMap = constructSameAddressMap('0xF43cA8C057b2Adc961c6BdD68B0193511de4E7B8')
+export const V3_MIGRATOR_ADDRESSES: AddressMap = constructSameAddressMap('0xB3E689193e94c785Fb2a9BB1d48F343Ca7fC61a5')
