@@ -303,6 +303,10 @@ export default function Header() {
           <Trans>About</Trans>
           <sup>↗</sup>
         </StyledExternalLink>
+        <StyledExternalLink id={`charts-nav-link`} href={'https://waterfall.foundation/uniswap/'}>
+          <Trans>Manual</Trans>
+          <sup>↗</sup>
+        </StyledExternalLink>
       </HeaderLinks>
 
       <HeaderControls>
