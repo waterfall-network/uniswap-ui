@@ -150,10 +150,8 @@ export default function App() {
           </BodyWrapper>
 
           <Footer>
-            Please note that this technology is still in a test mode and needs more profound elaboration to be released
-            as a ready-made product. Security checks are not performed yet, that is why we do not recommend processing
-            any sensitive information and transferring funds and we do not take the responsibility for damage caused by
-            the failures of this version.
+            This site is for demo and testing purposes only and this technology is still in a test mode and needs more
+            profound elaboration to be released as a ready-made product.
           </Footer>
         </AppWrapper>
       </Web3ReactManager>
