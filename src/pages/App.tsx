@@ -68,8 +68,13 @@ const Marginer = styled.div`
 `
 
 const Footer = styled.p`
-  padding: 20px;
+  margin: auto;
+  max-width: 1024px;
+  padding: 20px 15px;
   text-align: center;
+  color: ${({ theme }) => theme.text2};
+  background-color: ${({ theme }) => theme.advancedBG};
+  border-radius: 20px;
 `
 
 function TopLevelModals() {
