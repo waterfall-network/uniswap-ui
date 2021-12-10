@@ -1,4 +1,3 @@
-import DEFAULT_TOKEN_LIST from '@uniswap/default-token-list'
 import { TokenList } from '@uniswap/token-lists'
 import { useMemo } from 'react'
 import { useAppSelector } from 'state/hooks'
@@ -42,7 +41,7 @@ function listToTokenMap(list: TokenList): TokenAddressMap {
   return map
 }
 
-const TRANSFORMED_DEFAULT_TOKEN_LIST = listToTokenMap(DEFAULT_TOKEN_LIST)
+const TRANSFORMED_DEFAULT_TOKEN_LIST = [] as TokenAddressMap
 
 export function useAllLists(): AppState['lists']['byUrl'] {
   return useAppSelector((state) => state.lists.byUrl)
