@@ -31,9 +31,11 @@ const ReadMoreLink = styled(ExternalLink)`
 
 export default function DowntimeWarning() {
   const { chainId } = useActiveWeb3React()
+
   if (!chainId) {
     return null
   }
+  return null
 
   const Content = () => {
     switch (chainId) {
