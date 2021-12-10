@@ -217,7 +217,7 @@ const StyledNavLink = styled(NavLink).attrs({
 
 const StyledExternalLink = styled(ExternalLink).attrs({
   activeClassName,
-})<{ isActive?: boolean }>`
+})<{ isActive?: boolean; isMobileHide?: boolean }>`
   ${({ theme }) => theme.flexRowNoWrap}
   align-items: left;
   border-radius: 3rem;
@@ -241,6 +241,12 @@ const StyledExternalLink = styled(ExternalLink).attrs({
     color: ${({ theme }) => darken(0.1, theme.text1)};
     text-decoration: none;
   }
+
+  ${({ theme, isMobileHide }) =>
+    isMobileHide &&
+    theme.mediaWidth.upToMedium`
+    display: none;
+  `};
 `
 
 export default function Header() {
@@ -299,11 +305,11 @@ export default function Header() {
         {/*    <Trans>Vote</Trans>*/}
         {/*  </StyledNavLink>*/}
         {/*)}*/}
-        <StyledExternalLink id={`charts-nav-link`} href={'https://waterfall.foundation'}>
+        <StyledExternalLink id={`charts-nav-link`} href={'https://waterfall.foundation'} isMobileHide>
           <Trans>About</Trans>
           <sup>↗</sup>
         </StyledExternalLink>
-        <StyledExternalLink id={`charts-nav-link`} href={'https://waterfall.foundation/uniswap/'}>
+        <StyledExternalLink id={`charts-nav-link`} href={'https://waterfall.foundation/uniswap'} isMobileHide>
           <Trans>Manual</Trans>
           <sup>↗</sup>
         </StyledExternalLink>
