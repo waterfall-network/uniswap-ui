@@ -1,5 +1,7 @@
 // const AAVE_LIST = 'tokenlist.aave.eth'
-const WATERFALL_LIST = `https://download.nextcloud.in.ua/tokens.json`
+const WATERFALL_LIST = window?.location?.hostname.includes('testnet')
+  ? `https://uniswap.testnet.waterfall.network/testnet-tokens.json`
+  : `https://uniswap.waterfall.network/tokens.json`
 // const CMC_ALL_LIST = 'https://api.coinmarketcap.com/data-api/v3/uniswap/all.json'
 // // const COINGECKO_LIST = 'https://tokens.coingecko.com/uniswap/all.json'
 // const COMPOUND_LIST = 'https://raw.githubusercontent.com/compound-finance/token-list/master/compound.tokenlist.json'
