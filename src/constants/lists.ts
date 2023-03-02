@@ -1,5 +1,5 @@
 // const AAVE_LIST = 'tokenlist.aave.eth'
-const WATERFALL_LIST = 'https://download.nextcloud.in.ua/testnet-tokens.json';
+const WATERFALL_LIST = 'https://download.nextcloud.in.ua/testnet-tokens.json'
 // const WATERFALL_LIST = window?.location?.hostname.includes('testnet')
 //   ? `https://uniswap-demo.testnet.waterfall.network/testnet-tokens.json`
 //   : `https://uniswap-demo.waterfall.network/tokens.json`
